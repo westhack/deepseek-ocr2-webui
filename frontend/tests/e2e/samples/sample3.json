@@ -1,0 +1,44 @@
+{
+    "success": true,
+    "text": "sub_title\n## You're browsing as a Guest  \n\ntext\nPages you view in this window won't appear in the browser history and they won't leave other traces, like cookies, on the computer after you close all open Guest windows. Any files you download will be preserved, however.  \n\ntext\nLearn more",
+    "raw_text": "<|ref|>sub_title<|/ref|><|det|>[[163, 180, 789, 277]]<|/det|>\n## You're browsing as a Guest  \n\n<|ref|>text<|/ref|><|det|>[[68, 355, 860, 620]]<|/det|>\nPages you view in this window won't appear in the browser history and they won't leave other traces, like cookies, on the computer after you close all open Guest windows. Any files you download will be preserved, however.  \n\n<|ref|>text<|/ref|><|det|>[[408, 780, 544, 821]]<|/det|>\nLearn more",
+    "boxes": [
+        {
+            "label": "sub_title",
+            "box": [
+                165,
+                105,
+                799,
+                162
+            ]
+        },
+        {
+            "label": "text",
+            "box": [
+                68,
+                208,
+                871,
+                363
+            ]
+        },
+        {
+            "label": "text",
+            "box": [
+                413,
+                457,
+                551,
+                481
+            ]
+        }
+    ],
+    "image_dims": {
+        "w": 1012,
+        "h": 586
+    },
+    "prompt_type": "document",
+    "metadata": {
+        "mode": "document",
+        "backend": "cuda",
+        "has_boxes": true
+    }
+}

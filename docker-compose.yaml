@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: deepseek-ocr2:latest
+    container_name: deepseek-ocr2
+    runtime: nvidia
+    ipc: host
+    privileged: true
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      #- ./models:/root/.cache/huggingface
+    environment:
+      - GPU_MEMORY_UTILIZATION=0.9
+      - CUDA_VISIBLE_DEVICES=0
+      - TZ=Asia/Shanghai
+      - HF_HOME=/root/.cache/huggingface
+      #- HF_HUB_OFFLINE=1
+      #- TRANSFORMERS_OFFLINE=1
+    restart: unless-stopped
