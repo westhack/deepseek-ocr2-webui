@@ -156,3 +156,29 @@ curl http://localhost:8000/health
 * 模型权重缓存于 `~/.cache/huggingface`
 * 支持 base64 编码的 JPEG / PNG 图像
 * 表格内容会返回 Markdown 格式 + HTML 表格
+
+
+# DeepSeek-OCR2-WebUI
+
+一个纯前端、仅限浏览器的文档处理工具，利用 DeepSeek-OCR2 将扫描图像和多页 PDF 转换为 Markdown, DOCX, PDF等多种可编辑格式。
+
+## 🚀 概览
+
+DeepSeek-OCR2-WebUI 旨在完全在浏览器内处理文档转换任务。通过利用 Web Workers 和 IndexedDB 等现代 Web 技术，它提供了一个功能强大、注重隐私的替代方案，取代了服务器端文档处理。
+
+- **仅限前端**：无需后端服务（除了调用 DeepSeek-OCR2 API）。
+- **隐私至上**：文档处理过程中绝不会离开您的浏览器。
+- **支持大文档**：通过虚拟列表和高效的内存管理，针对数百页文档进行了优化。
+- **状态持久化**：利用 IndexedDB，任务进度和中间结果在页面刷新后依然存在。
+
+## 🛠️ 技术栈
+
+- **框架**: Vue 3 (Composition API)
+- **语言**: TypeScript
+- **UI 库**: Naive UI
+- **状态管理**: Pinia
+- **数据库**: Dexie.js (IndexedDB)
+- **PDF 核心**: `pdfjs-dist` (渲染) & `pdf-lib` (生成)
+- **转换器**: `markdown-it` (Markdown) & `docx` (Word)
+- **构建工具**: Vite
+- **测试**: Vitest & Playwright

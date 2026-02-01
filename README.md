@@ -98,6 +98,23 @@ curl http://localhost:8000/v1/chat/completions \
   }'
 ```
 
+### Remote image recognition using OCR
+```
+curl http://localhost:8000/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek-ai/DeepSeek-OCR-2",
+    "messages": [{
+      "role": "user",
+      "content": [
+        {"type": "image_url", "image_url": {"url": "http://127.0.0.1/image_url.png"}} ,
+        {"type": "text", "text": "<|grounding|>Convert the document to markdown."}
+      ]
+    }],
+    "max_tokens": 8192
+  }'
+```
+
 ### Streaming
 
 Add `"stream": true` to the request body for streaming responses.
@@ -136,3 +153,28 @@ curl http://localhost:8000/health
 - Model weights are cached in `~/.cache/huggingface`
 - Supports base64-encoded JPEG/PNG images
 - Returns markdown with HTML tables for tabular content
+
+# DeepSeek-OCR2-WebUI
+
+A pure frontend, browser-only document processing tool that converts scanned images and multi-page PDFs into various editable formats using DeepSeek-OCR.
+
+## 🚀 Overview
+
+DeepSeek-OCR2-WebUI is designed to handle document conversion tasks entirely within the browser. By leveraging modern web technologies like Web Workers and IndexedDB, it provides a powerful, privacy-focused alternative to server-side document processing.
+
+- **Frontend Only**: No backend services required (except for DeepSeek-OCR2 API).
+- **Privacy First**: Documents never leave your browser for processing.
+- **Large Document Support**: Optimized for hundreds of pages using virtual lists and efficient memory management.
+- **Persistent State**: Progress and intermediate results survive page refreshes using IndexedDB.
+
+## 🛠️ Technology Stack
+
+- **Framework**: Vue 3 (Composition API)
+- **Language**: TypeScript
+- **UI Library**: Naive UI
+- **State Management**: Pinia
+- **Database**: Dexie.js (IndexedDB)
+- **PDF Core**: `pdfjs-dist` (Rendering) & `pdf-lib` (Generation)
+- **Converters**: `markdown-it` (Markdown) & `docx` (Word)
+- **Build Tool**: Vite
+- **Testing**: Vitest & Playwright
