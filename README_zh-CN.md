@@ -139,10 +139,10 @@ curl http://localhost:8000/v1/chat/completions \
 
 ## Prompt 示例
 
-| Prompt      | 描述           |                                     |                   |
-| ----------- | ------------ | ----------------------------------- | ----------------- |
-| `<          | grounding    | >Convert the document to markdown.` | OCR + 布局检测（包含边界框） |
-| `Free OCR.` | 仅提取纯文本，不保留布局 |                                     |                   |
+| 提示词                                                | 说明                |
+|----------------------------------------------------|-------------------|
+| `<\|grounding\|>Convert the document to markdown.` | OCR + 布局检测（包含边界框） |
+| `Free OCR.`                                        | 仅提取纯文本，不保留布局      |
 
 ## 健康检查
 
