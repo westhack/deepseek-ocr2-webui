@@ -6,6 +6,9 @@ Production Docker deployment for DeepSeek-OCR-2 with OpenAI-compatible API.
 
 ```
 .
+├── backend          # Back-end service
+├── frontend         # Front-end page
+├── docker-compose.yaml       # docker compose 配置
 ├── Dockerfile          # Production Docker image
 ├── openai_server.py    # Custom OpenAI-compatible API server
 └── README.md           # This file

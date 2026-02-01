@@ -7,9 +7,11 @@ DeepSeek-OCR-2 的生产环境 Docker 部署，提供 OpenAI 兼容的 API。
 
 ```
 .
-├── Dockerfile          # 生产环境 Docker 镜像
-├── openai_server.py    # 自定义 OpenAI 兼容 API 服务器
-└── README.md           # 本文件
+├── backend          # 后端服务
+├── frontend         # 前端页面
+├── docker-compose.yaml       # docker compose 配置
+├── Dockerfile       # 生产环境 Docker 镜像
+└── README-zh-CN.md        # 本文件
 ```
 
 ## 为什么需要 `openai_server.py`？
